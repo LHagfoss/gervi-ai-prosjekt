@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const features = [
   {
     title: "AI Avatars",
@@ -30,9 +32,10 @@ export default function Features() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div 
+            <Link
+              href={`/${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
               key={index}
-              className="p-8 rounded-2xl bg-blue-50 hover:bg-blue-100 transition-colors"
+              className="p-8 rounded-2xl bg-blue-50 hover:bg-blue-100 transition-colors cursor-pointer"
             >
               <div className="text-4xl mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold text-slate-900 mb-3">
@@ -41,7 +44,7 @@ export default function Features() {
               <p className="text-slate-600">
                 {feature.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
