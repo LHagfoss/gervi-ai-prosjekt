@@ -19,8 +19,8 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="contact-content bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-lg">
             <h3 className="text-2xl font-bold mb-6 text-zinc-800">Contact Information</h3>
-            <p className="text-zinc-600 mb-8">We'd love to hear from you. Fill out the form or contact us using the information below.</p>
-            
+            <p className="text-zinc-600 mb-8">We&apos;d love to hear from you. Fill out the form or contact us using the information below.</p>
+            <p>Don&apos;t hesitate to reach out</p>
             {[
               { icon: <FaMapMarkerAlt />, title: "Our Location", content: "123 Business Street, New York, NY 10001" },
               { icon: <FaPhone />, title: "Phone Number", content: "+1 (555) 123-4567" },

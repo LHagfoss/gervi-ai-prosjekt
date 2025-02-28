@@ -12,7 +12,7 @@ export const animateHero = () => {
   });
 };
 
-export const animateFeatures = (featuresRef: React.RefObject<HTMLElement>) => {
+export const animateFeatures = (featuresRef: React.RefObject<HTMLElement | null>) => {
   gsap.from('.feature-card', {
     scrollTrigger: {
       trigger: featuresRef.current,
@@ -26,7 +26,7 @@ export const animateFeatures = (featuresRef: React.RefObject<HTMLElement>) => {
   });
 };
 
-export const animatePortfolio = (portfolioRef: React.RefObject<HTMLElement>) => {
+export const animatePortfolio = (portfolioRef: React.RefObject<HTMLElement | null>) => {
   gsap.from('.portfolio-item', {
     scrollTrigger: {
       trigger: portfolioRef.current,
@@ -40,7 +40,7 @@ export const animatePortfolio = (portfolioRef: React.RefObject<HTMLElement>) => 
   });
 };
 
-export const animateTeam = (teamRef: React.RefObject<HTMLElement>) => {
+export const animateTeam = (teamRef: React.RefObject<HTMLElement | null>) => {
   gsap.from('.team-member', {
     scrollTrigger: {
       trigger: teamRef.current,
@@ -54,7 +54,7 @@ export const animateTeam = (teamRef: React.RefObject<HTMLElement>) => {
   });
 };
 
-export const animateContact = (contactRef: React.RefObject<HTMLElement>) => {
+export const animateContact = (contactRef: React.RefObject<HTMLElement | null>) => {
   gsap.from('.contact-content', {
     scrollTrigger: {
       trigger: contactRef.current,
@@ -79,7 +79,7 @@ export const animateContact = (contactRef: React.RefObject<HTMLElement>) => {
   });
 };
 
-export const animateStats = (statsRef: React.RefObject<HTMLElement>) => {
+export const animateStats = (statsRef: React.RefObject<HTMLElement | null>) => {
   gsap.from('.stat-item', {
     scrollTrigger: {
       trigger: statsRef.current,
