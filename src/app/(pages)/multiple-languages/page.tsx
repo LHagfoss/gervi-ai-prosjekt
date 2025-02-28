@@ -1,5 +1,5 @@
 
-import Flags from 'country-flag-icons/react/3x2'
+  import Flags from 'country-flag-icons/react/3x2'
 
 export default function MultipleLanguagesPage() {
   const translations = [
@@ -134,23 +134,4 @@ export default function MultipleLanguagesPage() {
       </div>
     </div>
   );
-}
-
-// Add this helper function at the top of the file, after the imports
-function getGovernmentUrl(language: string): string {
-  const urls = {
-    "English": "https://www.gov.uk",
-    "Norwegian": "https://www.regjeringen.no",
-    "Chinese": "http://www.gov.cn",
-    "Arabic": "https://www.saudi.gov.sa",
-    "Hebrew": "https://www.gov.il",
-    "Russian": "http://government.ru",
-    "Japanese": "https://www.japan.go.jp",
-    "Korean": "https://www.korea.net",
-    "Hindi": "https://www.india.gov.in",
-    "Thai": "https://www.thaigov.go.th",
-    "German": "https://www.bundesregierung.de",
-    "Spanish": "https://www.lamoncloa.gob.es"
-  };
-  return urls[language as keyof typeof urls] || "#";
 }
