@@ -7,7 +7,7 @@ export default function Hero() {
   const [currentVideo, setCurrentVideo] = useState("/background.mp4");
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handleProgress = ({ played }: {played: any}) => {
+  const handleProgress = ({ played }: { played: number }) => {
     if (played > 0.80 && !isTransitioning) {
       setIsTransitioning(true);
     }
@@ -34,7 +34,7 @@ export default function Hero() {
             </h1>
             <span className="text-3xl text-blue-700 font-semibold">Every AI. Endless creativity</span>
             <p className="text-xl text-blue-950 max-w-2xl bg-white/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl">
-              Create studio-quality videos with AI avatars and voiceovers in 140+ languages. It's as easy as making a slide deck.
+              Create studio-quality videos with AI avatars and voiceovers in 140+ languages. It&apos;s as easy as making a slide deck.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <button className="bg-blue-600/90 backdrop-blur-sm hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors shadow-lg">

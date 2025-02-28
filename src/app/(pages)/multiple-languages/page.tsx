@@ -1,5 +1,5 @@
 
-import Flags from 'country-flag-icons/react/3x2'
+import * as Flags from 'country-flag-icons/react/3x2'
 import { FiInfo } from 'react-icons/fi'
 
 export default function MultipleLanguagesPage() {
