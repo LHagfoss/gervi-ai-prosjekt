@@ -1,17 +1,13 @@
 'use client';
 
-
-import ReactPlayer from 'react-player'
-import { useState } from 'react'
-
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
 
 // Dynamically import ReactPlayer with no SSR
 const ReactPlayer = dynamic(() => import('react-player/lazy'), {
   ssr: false,
 });
-
 
 export default function Hero() {
   const router = useRouter();
