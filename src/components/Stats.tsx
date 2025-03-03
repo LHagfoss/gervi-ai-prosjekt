@@ -12,8 +12,8 @@ export default function Stats() {
   }, []);
 
   return (
-    <section ref={statsRef} className="w-full py-20 bg-gradient-to-r from-blue-600/90 to-blue-800/90 relative">
-      <div className="absolute inset-0 backdrop-blur-sm"></div>
+    <section ref={statsRef} className="w-full py-20 bg-linear-to-r from-blue-600/90 to-blue-800/90 relative">
+      <div className="absolute inset-0 backdrop-blur-xs"></div>
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-16 text-blue-950">Our Impact by Numbers</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

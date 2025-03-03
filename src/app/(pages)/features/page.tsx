@@ -115,7 +115,7 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16">
+    <div className="min-h-screen bg-linear-to-b from-blue-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-slate-900 text-center mb-8">
           Our Features
@@ -128,7 +128,7 @@ export default function FeaturesPage() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all"
+              className="bg-white p-8 rounded-2xl shadow-xs hover:shadow-md transition-all"
             >
               <div className="text-blue-600 mb-6">{feature.icon}</div>
               <h2 className="text-xl font-semibold text-slate-900 mb-4">
