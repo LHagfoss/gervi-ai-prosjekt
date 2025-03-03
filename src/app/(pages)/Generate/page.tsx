@@ -7,6 +7,7 @@ const generationTypes = {
   Text: {
     icon: <FiMessageCircle className="w-5 h-5" />,
     styles: [
+      { name: "No Template", useCase: "Custom generation without template" },
       { name: "Blog Post", useCase: "Content Marketing" },
       { name: "Script Writing", useCase: "Content Creation" },
       { name: "Product Description", useCase: "E-commerce" }
@@ -15,6 +16,7 @@ const generationTypes = {
   Photo: {
     icon: <FiImage className="w-5 h-5" />,
     styles: [
+      { name: "No Template", useCase: "Custom generation without template" },
       { name: "Social Media Post", useCase: "Social Media Marketing" },
       { name: "Brand Assets", useCase: "Brand Marketing" },
       { name: "Product Visualization", useCase: "Product Design" }
@@ -23,6 +25,7 @@ const generationTypes = {
   Video: {
     icon: <FiVideo className="w-5 h-5" />,
     styles: [
+      { name: "No Template", useCase: "Custom generation without template" },
       { name: "Product Showcase", useCase: "E-commerce, Product Marketing" },
       { name: "Educational Tutorial", useCase: "Training, Education" },
       { name: "Company Presentation", useCase: "Corporate Communications" }
@@ -31,6 +34,7 @@ const generationTypes = {
   Music: {
     icon: <FiMusic className="w-5 h-5" />,
     styles: [
+      { name: "No Template", useCase: "Custom generation without template" },
       { name: "Podcast Intro", useCase: "Podcast Production" },
       { name: "Background Music", useCase: "Content Creation" },
       { name: "Voice Over", useCase: "Narration, Advertising" }
