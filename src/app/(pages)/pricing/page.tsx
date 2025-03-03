@@ -1,132 +1,93 @@
-import { FiCheck } from 'react-icons/fi';
+import { FiCheck, FiHeart } from 'react-icons/fi';
 
 export default function PricingPage() {
-  const plans = [
-    {
-      name: "Starter",
-      price: "99",
-      period: "month",
-      description: "Perfect for individuals and small projects",
-      features: [
-        "5 AI video generations per month",
-        "720p video quality",
-        "Basic avatar customization",
-        "5 languages supported",
-        "Email support",
-        "Basic templates",
-        "Standard rendering speed",
-        "2GB storage"
-      ],
-      highlighted: false,
-      buttonText: "Start Free Trial"
-    },
-    {
-      name: "Professional",
-      price: "199",
-      period: "month",
-      description: "Ideal for professionals and growing businesses",
-      features: [
-        "25 AI video generations per month",
-        "1080p video quality",
-        "Advanced avatar customization",
-        "20 languages supported",
-        "Priority email & chat support",
-        "Premium templates",
-        "Fast rendering speed",
-        "10GB storage",
-        "Custom branding",
-        "Analytics dashboard"
-      ],
-      highlighted: true,
-      buttonText: "Get Started"
-    },
-    {
-      name: "Enterprise",
-      price: "499",
-      period: "month",
-      description: "For large organizations with custom needs",
-      features: [
-        "Unlimited AI video generations",
-        "4K video quality",
-        "Full avatar customization",
-        "All languages supported",
-        "24/7 dedicated support",
-        "Custom templates",
-        "Priority rendering",
-        "100GB storage",
-        "Advanced branding options",
-        "Advanced analytics",
-        "API access",
-        "Custom integrations"
-      ],
-      highlighted: false,
-      buttonText: "Contact Sales"
-    }
+  const features = [
+    "Unlimited AI video generations",
+    "1080p video quality",
+    "Full avatar customization",
+    "All languages supported",
+    "Community support",
+    "All templates included",
+    "Standard rendering speed",
+    "5GB storage",
+    "Basic analytics",
+    "Regular updates"
+  ];
+
+  const donationTiers = [
+    { amount: "5", description: "Buy us a coffee" },
+    { amount: "20", description: "Support development" },
+    { amount: "50", description: "Become a patron" },
+    { amount: "100", description: "Premium supporter" }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-slate-900 text-center mb-4">
-          Simple, Transparent Pricing
+          Free for Everyone
         </h1>
         <p className="text-xl text-slate-600 text-center mb-16 max-w-3xl mx-auto">
-          Choose the perfect plan for your content creation needs
+          Our AI platform is completely free. Support us if you love what we do!
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <div 
-              key={index}
-              className={`
-                rounded-2xl p-8 
-                ${plan.highlighted 
-                  ? 'bg-blue-600 text-white ring-4 ring-blue-600 ring-offset-2' 
-                  : 'bg-white text-slate-900'
-                }
-              `}
-            >
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-semibold mb-2">{plan.name}</h2>
-                <p className={`mb-4 ${plan.highlighted ? 'text-blue-100' : 'text-slate-600'}`}>
-                  {plan.description}
-                </p>
-                <div className="flex items-baseline justify-center">
-                  <span className="text-4xl font-bold">$</span>
-                  <span className="text-6xl font-bold">{plan.price}</span>
-                  <span className="text-xl ml-2">/{plan.period}</span>
-                </div>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <FiCheck className={`w-5 h-5 mr-2 mt-0.5 ${
-                      plan.highlighted ? 'text-blue-200' : 'text-blue-600'
-                    }`} />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                className={`
-                  w-full py-3 px-6 rounded-lg font-semibold transition-colors
-                  ${plan.highlighted
-                    ? 'bg-white text-blue-600 hover:bg-blue-50'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                  }
-                `}
-              >
-                {plan.buttonText}
-              </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Free Features Card */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-semibold mb-2">Free Forever</h2>
+              <p className="text-slate-600 mb-4">
+                All features included, no hidden costs
+              </p>
+              <div className="text-3xl font-bold text-blue-600">$0</div>
             </div>
-          ))}
+
+            <ul className="space-y-4 mb-8">
+              {features.map((feature, idx) => (
+                <li key={idx} className="flex items-start">
+                  <FiCheck className="w-5 h-5 mr-2 mt-0.5 text-blue-600" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <button className="w-full py-3 px-6 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+              Get Started Now
+            </button>
+          </div>
+
+          {/* Donation Card */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="text-center mb-8">
+              <FiHeart className="w-8 h-8 text-red-500 mx-auto mb-4" />
+              <h2 className="text-2xl font-semibold mb-2">Support Our Project</h2>
+              <p className="text-slate-600">
+                Help us keep the platform free for everyone
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {donationTiers.map((tier, idx) => (
+                <button
+                  key={idx}
+                  className="p-4 border-2 border-blue-100 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors text-center"
+                >
+                  <div className="text-xl font-bold text-blue-600">${tier.amount}</div>
+                  <div className="text-sm text-slate-600">{tier.description}</div>
+                </button>
+              ))}
+            </div>
+
+            <div className="text-center text-sm text-slate-500">
+              All donations help support server costs and development
+            </div>
+          </div>
         </div>
 
         <div className="mt-16 text-center">
           <p className="text-slate-600">
-            All plans include a 14-day free trial. No credit card required.
+            We believe in making AI accessible to everyone.
+            <br />Your support helps us maintain and improve the platform.
           </p>
         </div>
       </div>
