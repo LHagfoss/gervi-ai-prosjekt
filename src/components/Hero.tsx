@@ -1,11 +1,21 @@
 'use client';
 
-import ReactPlayer from 'react-player'
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import ReactPlayer with no SSR
+const ReactPlayer = dynamic(() => import('react-player/lazy'), {
+  ssr: false,
+});
 
 export default function Hero() {
   const [currentVideo, setCurrentVideo] = useState("/background.mp4");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleProgress = ({ played }: { played: number }) => {
     if (played > 0.80 && !isTransitioning) {
@@ -26,15 +36,15 @@ export default function Hero() {
         <div className="absolute inset-0 bg-white/30 backdrop-blur-xs"></div>
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
           <div className="flex flex-col items-center gap-6">
-            <div className="bg-blue-600/90 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+            <div className="bg-blue-600/90 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium">
               #1 AI VIDEO PLATFORM FOR ANYONE
             </div>
-            <h1 className="text-6xl md:text-9xl leading-[50%] font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-blue-800">
+            <h1 className="text-6xl md:text-9x font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-blue-800">
               OmniGen
             </h1>
             <span className="text-3xl text-blue-700 font-semibold">Every AI. Endless creativity</span>
-            <p className="text-xl text-blue-950 max-w-2xl bg-white/50 backdrop-blur-xs p-6 rounded-2xl shadow-xl">
-              Create studio-quality videos with AI avatars and voiceovers in 140+ languages. It's as easy as making a slide deck.
+            <p className="text-xl text-blue-950 max-w-2xl bg-white/50 backdrop-blur-xs p-6 rounded-2xl">
+              Create studio-quality videos with AI avatars and voiceovers in 140+ languages. It&apos;s as easy as making a slide deck.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <button className="bg-blue-600/90 backdrop-blur-xs hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors shadow-lg">
@@ -51,23 +61,25 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
+      
       <div className="w-[80%] translate-y-[-15%] rounded-[3rem] overflow-hidden shadow-[0_0_100px_20px_rgba(59,130,246,0.2)] bg-white/80 backdrop-blur-lg p-1">
         <div className={`transition-all ease-in-out duration-500 rounded-[2.75rem] overflow-hidden ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-          <ReactPlayer
-            url={currentVideo}
-            playing
-            loop={false}
-            muted
-            width="100%"
-            height="100%"
-            playsinline
-            className="object-cover w-full h-full"
-            onProgress={handleProgress}
-            onEnded={handleVideoEnd}
-          />
+          {isMounted && (
+            <ReactPlayer
+              url={currentVideo}
+              playing
+              loop={false}
+              muted
+              width="100%"
+              height="100%"
+              playsinline
+              className="object-cover w-full h-full"
+              onProgress={handleProgress}
+              onEnded={handleVideoEnd}
+            />
+          )}
         </div>
       </div>
     </section>
-  )
+  );
 }
