@@ -91,7 +91,7 @@ export default function MultipleLanguagesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-16">
+    <div className="min-h-screen bg-linear-to-b from-purple-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">
@@ -119,7 +119,7 @@ export default function MultipleLanguagesPage() {
           {translations.map((item, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group relative"
+              className="bg-white p-6 rounded-xl shadow-xs hover:shadow-md transition-shadow group relative"
             >
               <div className="absolute -top-2 -right-2 bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                 Click to preview voice
@@ -152,7 +152,7 @@ export default function MultipleLanguagesPage() {
         </div>
 
         <div className="mt-16 space-y-8 text-center">
-          <div className="bg-white p-6 rounded-xl shadow-sm max-w-2xl mx-auto">
+          <div className="bg-white p-6 rounded-xl shadow-xs max-w-2xl mx-auto">
             <h3 className="text-2xl font-semibold text-slate-900 mb-4">
               Ready to Go Global?
             </h3>

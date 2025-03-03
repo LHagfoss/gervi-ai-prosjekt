@@ -12,8 +12,8 @@ export default function Contact() {
   }, []);
 
   return (
-    <section ref={contactRef} className="w-full py-20 bg-gradient-to-br from-white to-blue-50 relative">
-      <div className="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
+    <section ref={contactRef} className="w-full py-20 bg-linear-to-br from-white to-blue-50 relative">
+      <div className="absolute inset-0 bg-white/50 backdrop-blur-xs"></div>
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-16 text-zinc-800">Get In Touch</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -27,7 +27,7 @@ export default function Contact() {
               { icon: <FaEnvelope />, title: "Email Address", content: "info@yourcompany.com" }
             ].map((item, index) => (
               <div key={index} className="flex items-start mb-6 group hover:-translate-y-1 transition-transform duration-300">
-                <div className="mr-4 p-3 bg-blue-100/80 backdrop-blur-sm rounded-lg text-blue-600 group-hover:scale-110 transition-transform duration-300">
+                <div className="mr-4 p-3 bg-blue-100/80 backdrop-blur-xs rounded-lg text-blue-600 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
                 <div>
@@ -46,7 +46,7 @@ export default function Contact() {
                   <input 
                     type="text" 
                     id="name" 
-                    className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-blue-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" 
+                    className="w-full px-4 py-2 bg-white/50 backdrop-blur-xs border border-blue-100 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" 
                   />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ export default function Contact() {
                   <input 
                     type="email" 
                     id="email" 
-                    className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-blue-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" 
+                    className="w-full px-4 py-2 bg-white/50 backdrop-blur-xs border border-blue-100 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" 
                   />
                 </div>
               </div>
@@ -63,7 +63,7 @@ export default function Contact() {
                 <input 
                   type="text" 
                   id="subject" 
-                  className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-blue-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" 
+                  className="w-full px-4 py-2 bg-white/50 backdrop-blur-xs border border-blue-100 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" 
                 />
               </div>
               <div className="mb-6">
@@ -71,12 +71,12 @@ export default function Contact() {
                 <textarea 
                   id="message" 
                   rows={5} 
-                  className="w-full px-4 py-2 bg-white/50 backdrop-blur-sm border border-blue-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-2 bg-white/50 backdrop-blur-xs border border-blue-100 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                 ></textarea>
               </div>
               <button 
                 type="submit" 
-                className="bg-blue-600/90 backdrop-blur-sm hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="bg-blue-600/90 backdrop-blur-xs hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
                 Send Message
               </button>

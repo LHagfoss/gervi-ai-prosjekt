@@ -11,7 +11,7 @@ import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-white">
+    <main className="min-h-screen bg-linear-to-b from-white via-blue-50 to-white">
       <div className="relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(59,130,246,0.1),transparent)] pointer-events-none"></div>
         <Hero />

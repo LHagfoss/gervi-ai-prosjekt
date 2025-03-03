@@ -101,7 +101,7 @@ export default function TemplatesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16">
+    <div className="min-h-screen bg-linear-to-b from-blue-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-slate-900 text-center mb-4">
           Content Generation Templates
@@ -124,7 +124,7 @@ export default function TemplatesPage() {
                 {category.templates.map((template, idx) => (
                   <div 
                     key={idx}
-                    className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white p-6 rounded-xl shadow-xs hover:shadow-md transition-shadow"
                   >
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">
                       {template.name}
