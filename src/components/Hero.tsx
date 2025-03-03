@@ -7,7 +7,7 @@ export default function Hero() {
   const [currentVideo, setCurrentVideo] = useState("/background.mp4");
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handleProgress = ({ played }: {played: any}) => {
+  const handleProgress = ({ played }: { played: number }) => {
     if (played > 0.80 && !isTransitioning) {
       setIsTransitioning(true);
     }
