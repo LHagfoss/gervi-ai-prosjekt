@@ -52,7 +52,7 @@ export default function Features() {
             >
               <div className="absolute inset-0 bg-blue-500/5 rounded-2xl transform scale-x-[1.01] scale-y-[1.02] group-hover:scale-105 transition-transform duration-300"></div>
               <div className="relative">
-                <div className="bg-blue-100/80 backdrop-blur-sm p-4 rounded-xl inline-block text-blue-600 mb-4">
+                <div className="bg-blue-100/80 backdrop-blur-xs p-4 rounded-xl inline-block text-blue-600 mb-4">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-blue-900 mb-3">{feature.title}</h3>
@@ -63,7 +63,7 @@ export default function Features() {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-blue-600/90 backdrop-blur-sm hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl">
+          <button className="bg-blue-600/90 backdrop-blur-xs hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl">
             Explore All Features
           </button>
         </div>

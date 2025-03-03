@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">
+            <span className="text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-blue-700">
               OmniGen
             </span>
           </Link>

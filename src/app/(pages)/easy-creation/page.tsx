@@ -59,7 +59,7 @@ export default function EasyCreationPage() {
 
         <div className="space-y-12 mb-16">
           {steps.map((step, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-sm">
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-xs">
               <div className="flex items-start gap-6">
                 <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
                   {step.icon}
