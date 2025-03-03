@@ -1,5 +1,9 @@
 'use client';
 
+
+import ReactPlayer from 'react-player'
+import { useState } from 'react'
+
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
@@ -8,7 +12,9 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), {
   ssr: false,
 });
 
+
 export default function Hero() {
+  const router = useRouter();
   const [currentVideo, setCurrentVideo] = useState("/background.mp4");
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -47,7 +53,10 @@ export default function Hero() {
               Create studio-quality videos with AI avatars and voiceovers in 140+ languages. It&apos;s as easy as making a slide deck.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <button className="bg-blue-600/90 backdrop-blur-xs hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors shadow-lg">
+              <button 
+                onClick={() => router.push('/Generate')}
+                className="bg-blue-600/90 backdrop-blur-xs hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors shadow-lg"
+              >
                 Get started for FREE →
               </button>
             </div>
