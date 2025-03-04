@@ -115,7 +115,7 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-blue-50 to-white py-16">
+    <div className="mt-16 min-h-screen bg-linear-to-b from-blue-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-slate-900 text-center mb-8">
           Our Features

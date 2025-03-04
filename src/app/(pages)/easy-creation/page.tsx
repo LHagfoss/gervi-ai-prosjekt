@@ -45,7 +45,7 @@ export default function EasyCreationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-16">
+    <div className="mt-16 min-h-screen bg-slate-50 py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl font-bold text-slate-900 mb-6">
