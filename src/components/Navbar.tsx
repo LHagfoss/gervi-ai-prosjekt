@@ -45,6 +45,9 @@ export default function Navbar() {
             <Link href="/templates" className="text-slate-600 hover:text-blue-600 transition-colors">
               Templates
             </Link>
+            <Link href="/documentation" className="text-slate-600 hover:text-blue-600 transition-colors">
+              Documentation
+            </Link>
             <Link href="/enterprise" className="text-slate-600 hover:text-blue-600 transition-colors">
               Enterprise
             </Link>
