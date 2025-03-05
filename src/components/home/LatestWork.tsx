@@ -5,13 +5,12 @@ import ReactPlayer from 'react-player';
 export default function LatestWork() {
 
   return (
-    <section className="w-full py-20 bg-gradient-to-br from-white to-blue-50 relative">
-      <div className="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
+    <section className="w-full py-20 bg-slate-50 relative">
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-8 text-zinc-800">
+        <h2 className="text-4xl font-bold text-center mb-8 text-slate-900">
           Our Latest and Best AI Generated Video
         </h2>
-        <p className="text-xl text-center text-blue-600 mb-12">
+        <p className="text-xl text-center text-blue-600 mb-12 font-semibold">
           #OmniGen
         </p>
         

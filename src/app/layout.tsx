@@ -17,6 +17,30 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AI Video Platform for Business | Text to Video",
   description: "Create studio-quality videos with AI avatars and voiceovers",
+  openGraph: {
+    title: "AI Video Platform for Business | Text to Video",
+    description: "Create studio-quality videos with AI avatars and voiceovers.",
+    images: [
+      {
+        url: "/opengraph.png",
+        width: 1280,
+        height: 720,
+        alt: "Omnigen AI - AI Video Platform for Business | Text to Video"
+      }
+    ],
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Omnigen AI - AI Video Platform for Business | Text to Video",
+    description: "Create studio-quality videos with AI avatars and voiceovers.",
+    images: ['/opengraph.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({
