@@ -32,7 +32,7 @@ export default function AIAvatarsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-blue-50 to-white py-16">
+    <div className="min-h-screen bg-linear-to-b mt-16 from-blue-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-5xl font-bold text-slate-900 text-center mb-8">
           Advanced AI Integration

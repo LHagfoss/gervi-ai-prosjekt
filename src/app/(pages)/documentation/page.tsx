@@ -54,7 +54,7 @@ export default function DocumentationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-blue-50 to-white py-16">
+    <div className=" mt-16 min-h-screen bg-linear-to-b from-blue-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">
