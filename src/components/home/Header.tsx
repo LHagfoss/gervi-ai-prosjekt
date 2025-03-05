@@ -1,11 +1,24 @@
 'use client';
 
-import ReactPlayer from 'react-player'
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
+import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
+
+const ReactPlayer = dynamic(() => import('react-player/lazy'), {
+  ssr: false,
+});
 
 export default function Hero() {
-  const [currentVideo, setCurrentVideo] = useState("/background.mp4");
+  const router = useRouter();
+  const [currentVideo, setCurrentVideo] = useState("/video.mp4");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleProgress = ({ played }: { played: number }) => {
     if (played > 0.80 && !isTransitioning) {
@@ -15,59 +28,62 @@ export default function Hero() {
 
   const handleVideoEnd = () => {
     setTimeout(() => {
-      setCurrentVideo(currentVideo === "/background.mp4" ? "/nig.mp4" : "/background.mp4");
+      setCurrentVideo(currentVideo === "/Omnigen_Reklame_Video.mp4" ? "/Omnigen_Reklame_Video.mp4" : "/Omnigen_Reklame_Video.mp4");
       setIsTransitioning(false);
     }, 500);
   };
 
   return (
-    <header className="w-screen min-h-screen flex flex-col items-center overflow-x-hidden">
-      <div className="w-full relative min-h-[90vh] flex items-center justify-center bg-linear-to-br from-white to-blue-50 px-4">
-        <div className="absolute inset-0 bg-white/30 backdrop-blur-xs"></div>
+    <section className="w-screen min-h-screen flex flex-col items-center">
+      // ... in the Hero section
+      <div className="w-full relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <div className="flex flex-col items-center gap-4 sm:gap-6">
-            <div className="bg-blue-600/90 backdrop-blur-md text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg">
+          <div className="flex flex-col items-center gap-6">
+            <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
               #1 AI VIDEO PLATFORM FOR ANYONE
             </div>
-            <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-blue-800">
+            <h1 className="text-6xl md:text-9x font-bold text-slate-900">
               OmniGen
             </h1>
-            <span className="text-xl sm:text-3xl text-blue-700 font-semibold">Every AI. Endless creativity</span>
-            <p className="text-base sm:text-xl text-blue-950 max-w-2xl bg-white/50 backdrop-blur-xs p-4 sm:p-6 rounded-2xl">
-              Create studio-quality videos with AI avatars and voiceovers in 140+ languages. It&apos;s as easy as making a slide deck.
+            <span className="text-3xl text-slate-800 font-semibold">Every AI. Endless creativity</span>
+            <p className="text-xl text-slate-700 max-w-2xl bg-white/90 shadow-sm p-6 rounded-2xl">
+              Create studio-quality videos with AI avatars and voiceovers in 140+ languages.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-2 sm:mt-4 w-full sm:w-auto">
-              <button className="bg-blue-600/90 backdrop-blur-xs hover:bg-blue-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-colors shadow-lg w-full sm:w-auto">
-                Get started for FREE →
-              </button>
-            </div>
-            <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm text-blue-900 mt-4 bg-white/60 backdrop-blur-xs px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-md flex-wrap justify-center">
-              <span>No credit card required</span>
-              <span className="w-[1px] h-4 bg-blue-200 hidden sm:block"></span>
-              <span className="flex items-center gap-1">
-                <span>Rated 4.7/5 on G2</span>
-              </span>
-            </div>
           </div>
         </div>
       </div>
-
-      <div className="w-[95%] sm:w-[80%] translate-y-[-10%] sm:translate-y-[-15%] rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-[0_0_100px_20px_rgba(59,130,246,0.2)] bg-white/80 backdrop-blur-lg p-1">
-        <div className={`transition-all ease-in-out duration-500 rounded-xl sm:rounded-[2.75rem] overflow-hidden ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-          <ReactPlayer
-            url={currentVideo}
-            playing
-            loop={false}
-            muted
-            width="100%"
-            height="100%"
-            playsinline
-            className="object-cover w-full h-full"
-            onProgress={handleProgress}
-            onEnded={handleVideoEnd}
-          />
+      
+      <div className="w-[80%] translate-y-[-15%] rounded-[3rem] overflow-hidden shadow-[0_0_100px_20px_rgba(59,130,246,0.2)] bg-white/80 backdrop-blur-lg p-1">
+        <div className="relative">
+          <div className={`transition-all ease-in-out duration-500 rounded-[2.75rem] overflow-hidden ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+            {isMounted && (
+              <ReactPlayer
+                url={currentVideo}
+                playing
+                loop={false}
+                muted={isMuted}
+                volume={0.25}
+                width="100%"
+                height="100%"
+                playsinline
+                className="object-cover w-full h-full"
+                onProgress={handleProgress}
+                onEnded={handleVideoEnd}
+              />
+            )}
+          </div>
+          <button
+            onClick={() => setIsMuted(!isMuted)}
+            className="absolute bottom-6 right-6 p-2 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all z-10"
+          >
+            {isMuted ? (
+              <HiVolumeOff className="w-6 h-6 text-blue-600" />
+            ) : (
+              <HiVolumeUp className="w-6 h-6 text-blue-600" />
+            )}
+          </button>
         </div>
       </div>
-    </header>
-  )
+    </section>
+  );
 }

@@ -39,6 +39,9 @@ export default function Navbar() {
             <Link href="/features" className="text-slate-600 hover:text-blue-600 transition-colors">
               Features
             </Link>
+            <Link href="/showcase" className="text-slate-600 hover:text-blue-600 transition-colors">
+              Showcase
+            </Link>
             <Link href="/pricing" className="text-slate-600 hover:text-blue-600 transition-colors">
               Pricing
             </Link>

@@ -4,11 +4,11 @@ import { FiMonitor, FiCpu, FiGlobe, FiLayers, FiShield, FiUsers } from 'react-ic
 
 export default function Features() {
   return (
-    <section className="py-24 px-4 relative">
+    <section className="py-24 px-4 relative bg-slate-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">Powerful Features</h2>
-          <p className="text-blue-700 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">Powerful Features</h2>
+          <p className="text-slate-700 text-lg max-w-2xl mx-auto">
             Experience the next generation of AI-powered video creation with our cutting-edge features
           </p>
         </div>
@@ -48,15 +48,14 @@ export default function Features() {
           ].map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-blue-200 backdrop-blur-md rounded-2xl p-8 transition-all duration-300 hover:bg-blue/500/80 hover:shadow-xl hover:-translate-y-1"
+              className="group relative bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-slate-100"
             >
-              <div className="absolute inset-0 bg-blue-500/5 rounded-2xl transform scale-x-[1.01] scale-y-[1.02] group-hover:scale-105 transition-transform duration-300"></div>
               <div className="relative">
-                <div className="bg-blue-100/80 backdrop-blur-xs p-4 rounded-xl inline-block text-blue-600 mb-4">
+                <div className="bg-blue-50 p-4 rounded-xl inline-block text-blue-600 mb-4">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">{feature.title}</h3>
-                <p className="text-blue-700">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-600">{feature.description}</p>
               </div>
             </div>
           ))}

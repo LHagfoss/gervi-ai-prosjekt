@@ -22,9 +22,9 @@ export default function Contact() {
             <p className="text-zinc-600 mb-8">We&apos;d love to hear from you. Fill out the form or contact us using the information below.</p>
             <p>Don&apos;t hesitate to reach out</p>
             {[
-              { icon: <FaMapMarkerAlt />, title: "Our Location", content: "123 Business Street, New York, NY 10001" },
-              { icon: <FaPhone />, title: "Phone Number", content: "+1 (555) 123-4567" },
-              { icon: <FaEnvelope />, title: "Email Address", content: "info@yourcompany.com" }
+              { icon: <FaMapMarkerAlt />, title: "Our Location", content: "Europe, Norway" },
+              { icon: <FaPhone />, title: "Phone Number", content: "+47 69696969" },
+              { icon: <FaEnvelope />, title: "Email Address", content: "support@omnigen.site" }
             ].map((item, index) => (
               <div key={index} className="flex items-start mb-6 group hover:-translate-y-1 transition-transform duration-300">
                 <div className="mr-4 p-3 bg-blue-100/80 backdrop-blur-xs rounded-lg text-blue-600 group-hover:scale-110 transition-transform duration-300">
